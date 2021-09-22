@@ -8,8 +8,9 @@ CCOM4017: Operating Systems
   </p>
   
 ## About the project:
-This project implements a simulation of Electronics devices which sends some Jobs to a compute Server. The Server will run the jobs for them
-and send a message when done to the specific "edevice". 
+This project implements a simulation of Electronics devices which sends some Jobs to a compute Server. The Server will "run" the jobs for them 
+with a thread that acts as Producer and another one as Consumer and send a message when done to the specific "edevice". 
+To prevent Race Conditions on the Compute Server Mutexes and Semaphore are used, to guard Critical regions, and block processes.
 </br>
 </br>
 ### eDevice:
