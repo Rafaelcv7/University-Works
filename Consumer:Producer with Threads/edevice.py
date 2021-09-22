@@ -2,10 +2,10 @@ from os import system
 import socket, sys, random
 from threading import Thread
 
-#-[CONFIG VARIABLES:]-------------------------|
-T = 5  #Number of Threads
-N = 20   #Number of messages before edevice stop
-TR = 5 #Random Job Time range (1 - J)
+#---[CONFIG VARIABLES:]-----------------------|
+T = 5  # Number of Threads
+N = 5  # Number of messages before edevice stop
+TR = 5 # Random Job Time range (1 - J)
 #---------------------------------------------|
 
 #---[FUNCTIONS]--------------------------------------------------|
@@ -16,8 +16,8 @@ def createJob(i) :
 
 
 #-------------[eDEVICE THREADS PROCESS]------------------|
-#Each thread creates a Job and then send it to the Server
-#After receiving response it will repeat process N times
+# Each thread creates a Job and then send it to the Server
+# After receiving response it will repeat process N times
 def threadProcess(i) :
     j = 0
     while j < N:
@@ -31,7 +31,7 @@ def threadProcess(i) :
     #print("device {} finished.".format(i))
 #---------------------------------------------------------|
 
-#A extension of Thread Class to specify Run and Thread Number
+# A extension of Thread Class to specify Run and Thread Number
 class CounterThread(Thread):
 	def __init__ (self, t_number):	
 		self.t_number = t_number
@@ -40,8 +40,8 @@ class CounterThread(Thread):
 	def run(self):
 		threadProcess(self.t_number)
 
-#Creates a Buffer to store all the threads, start them
-#And tells main process to wait for them to finish		
+# Creates a Buffer to store all the threads, start them
+# And tells main process to wait for them to finish		
 def main():
 	idealThreads = T
 	thread = [0] * idealThreads
@@ -67,13 +67,13 @@ else:
 
 # Create socket for client
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
-#Send a "handshake" to server to let it know how 
-#many devices are going to connect.
+# Send a "handshake" to server to let it know how 
+# many devices are going to connect.
 s.sendto(str(T).encode('utf-8'), (ip, port))
 
 main()
-#After all threads finished the client sends a 0 to the server
-#To let it know that it has finished and is safe to close connection
+# After all threads finished the client sends a 0 to the server
+# To let it know that it has finished and is safe to close connection
 print("Ending Connection...")
 end_connection = "0"
 s.sendto(end_connection.encode('utf-8'), (ip, port))
