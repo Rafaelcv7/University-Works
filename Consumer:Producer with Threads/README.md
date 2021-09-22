@@ -50,7 +50,7 @@ Note: Is important to run the two programs in this order.
 
 ![Programs-Demo](https://user-images.githubusercontent.com/55097377/134273246-02826cc0-73da-4867-be2e-328ec84ea9cb.mov)
 
-#Extra: </br>
+# Extra: </br>
 For better visuals of the process on `scheduler.py` decomment:
   - `print("Consuming..! " + list[shortest_Job])` on ``fetchJob()`` method.
   - `print(SHARED_QUEUE)` on Consumer Thread Process.
