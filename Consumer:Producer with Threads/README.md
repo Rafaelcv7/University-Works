@@ -1,4 +1,6 @@
+<p align="center">
 # Consumer vs Producer Simulation with threads
+</p>
 <p align="center">
 University of Puerto Rico at Rio Piedras
   </br>
