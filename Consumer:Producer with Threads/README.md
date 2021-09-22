@@ -54,6 +54,3 @@ Note: Is important to run the two programs in this order.
 For better visuals of the process on `scheduler.py` decomment:
   - `print("Consuming..! " + list[shortest_Job])` on ``fetchJob()`` method.
   - `print(SHARED_QUEUE)` on Consumer Thread Process.
-
-
-
